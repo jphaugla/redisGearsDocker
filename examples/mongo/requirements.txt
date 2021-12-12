@@ -1,0 +1,2 @@
+rgsync
+pymongo==3.12.0
