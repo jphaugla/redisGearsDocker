@@ -1,7 +1,5 @@
 # Set up Postgres DB
 
-# Set up MySql DB
-
 ## Setup Postgres docker
 This will bring up a Postgres database test with a demo user.  Change user and password in docker-compose.yml file
 

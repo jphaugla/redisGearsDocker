@@ -20,7 +20,7 @@ pip install gears-cli
 ```
 -----------------
 ## Create MongoDB database using mongo express
-* Log into adminer using following URL in your browser
+* Log into mongo express using following URL in your browser
 [http://localhost:8081
 ](http://localhost:8081)
 * Enter "db" and Click on "Create Database"
@@ -57,7 +57,7 @@ json.set person:1 . '{"hello": "world", "my": ["list", "has", "things"]}'
 json.set person:1 . '{"hello": "there!"}'
 ```
 **Verify Data stored in MongoDB**
-* Log into adminer using following URL in your browser
+* Log into mongo express using following URL in your browser
 [http://localhost:8081
 ](http://localhost:8081)
 * Click on "db"
