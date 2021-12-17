@@ -27,15 +27,15 @@ NOTE:	Exactly once property is not valid for Redis cluster, because Redis cluste
 ## Test
 Using redis-cli perform:
 ```bash
-redis-cli
-127.0.0.1:6379> hset key:1 bin1 1 bin2 2 bin3 3 bin4 4 bin5 5
-(integer) 5
+redis-cli hset key:1 bin1 1 bin2 2 bin3 3 bin4 4 bin5 5
 ```
 
 Make sure data reached the second Redis server:
 ```bash
-redis-cli -p 9001
-127.0.0.1:9001> hgetall key:1
+redis-cli -p 9001 hgetall key:1
+``` 
+Should return
+```bash
  1) "bin1"
  2) "1"
  3) "bin2"
