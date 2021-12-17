@@ -3,6 +3,7 @@ services:
 
   redis:
     image: "redislabs/redismod:edge"
+    # image: myredis
     container_name: redis
     ports:
       - "6379:6379"
@@ -19,6 +20,8 @@ services:
       MONGO_INITDB_DATABASE: admin
     ports:
       - 27017:27017
+    volumes:
+      - ./mongoDB:/data/db
 
   mongo-express:
     image: mongo-express
