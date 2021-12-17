@@ -3,6 +3,7 @@ services:
 
   redis:
     image: "redislabs/redismod:edge"
+    # image: myredis
     container_name: redis
     ports:
       - "6379:6379"
@@ -10,7 +11,7 @@ services:
       - ./redis_data:/data
 
   mysql:
-    image: "mysql"
+    image: "mariadb"
     container_name: mysql
     restart: always
     ports:
@@ -20,8 +21,11 @@ services:
       - MYSQL_DATABASE=test
       - MYSQL_USER=demouser
       - MYSQL_PASSWORD=jasonrocks
+    volumes:
+      - ./mysqlDB:/var/lib/mysql
 
   adminer:
+    # image: arm64v8/adminer
     image: adminer
     container_name: adminer
     restart: always

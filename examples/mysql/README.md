@@ -44,8 +44,7 @@ gears-cli run --host 127.0.0.1 --port 6379 example.py --requirements requirement
 # Test
 Using redis-cli perform:
 ```bash
- docker exec -it redis redis-cli
-> hset person:1 first_name foo last_name bar age 20
+ docker exec -it redis redis-cli hset person:1 first_name foo last_name bar age 20
 ```
 
 Make sure data reached MySql server:
