@@ -2,6 +2,7 @@ version: '3'
 services:
 
   redis1:
+    # image: myredis
     image: "redislabs/redismod:edge"
     container_name: redis1
     ports:
@@ -10,6 +11,7 @@ services:
       - ./redis_data1:/data
 
   redis2:
+    # image: myredis
     image: "redislabs/redismod:edge"
     container_name: redis2
     ports:
