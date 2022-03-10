@@ -2,6 +2,7 @@ version: '3'
 services:
 
   redis:
+    # custom image
     # image: myredis
     image: "redislabs/redismod:edge"
     container_name: redis

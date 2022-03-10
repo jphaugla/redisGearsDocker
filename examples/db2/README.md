@@ -22,13 +22,13 @@ pip install gears-cli
 ```
 ## Running the recipe
 ```bash
-gears-cli run --host 127.0.0.1 --port 6379 example.py --requirements requirements.txt
+gears-cli run --host 127.0.0.1 --port 6379 sample.py --requirements requirements.txt
 ```
 
 ## Test
 Using redis-cli perform:
 ```bash
- docker exec -it redis redis-cli hset person:1 first_name foo last_name bar age 20
+ docker exec -it redis redis-cli hset emp:1 first foo last bar middle p
 ```
 
 Make sure data reached postgres server:
