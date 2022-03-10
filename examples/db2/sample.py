@@ -2,11 +2,14 @@ from rgsync.Connectors.sql_connectors import BaseSqlConnection
 from rgsync.Connectors import OracleSqlConnector
 from rgsync import RGWriteBehind, RGWriteThrough
 
+
 class DB2Connection(BaseSqlConnection):
     def __init__(self, user, passwd, db):
         BaseSqlConnection.__init__(self, user, passwd, db)
     def _getConnectionStr(self):
         return 'db2://{user}:{password}@{db}'.format(user=self.user, password=self.passwd, db=self.db)
+
+
 class DB2Connector(OracleSqlConnector):
     def __init__(self, connection, tableName, pk, exactlyOnceTableName=None):
         OracleSqlConnector.__init__(self, connection, tableName, pk, exactlyOnceTableName)    
@@ -24,13 +27,14 @@ class DB2Connector(OracleSqlConnector):
         self.delQuery = 'delete from %s where %s=:%s' % (self.tableName, self.pk, self.pk)
         if self.exactlyOnceTableName is not None:
             self.exactlyOnceQuery = GetUpdateQuery(self.exactlyOnceTableName, 'id', ['id', 'val'], ['val'])
-            connection = DB2Connection('db2inst1', 'jasonrocks', '127.0.0.1:50000/SAMPLE')
 
-            empConnector = DB2Connector(connection, 'EMPLOYEE', 'EMPNO')
-            empMappings = {
-                'FIRSTNME': 'first',
-                'LASTNAME': 'last',
-                'MIDINIT': 'middle'
+
+connection = DB2Connection('db2inst1', 'jasonrocks', 'db2:50000/SAMPLE')
+empConnector = DB2Connector(connection, 'EMPLOYEE', 'EMPNO')
+empMappings = {
+                'first':'FIRSTNME',
+                'last':'LASTNAME',
+                'middle':'MIDINIT'
             }
-            RGWriteBehind(GB, keysPrefix='emp', mappings=empMappings, connector=empConnector, name='empWriteBehind',
+RGWriteBehind(GB, keysPrefix='emp', mappings=empMappings, connector=empConnector, name='empWriteBehind',
               version='99.99.99')

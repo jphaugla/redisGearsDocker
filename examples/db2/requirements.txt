@@ -1,3 +1,6 @@
 rgsync
 psycopg2-binary
 cryptography
+ibm_db_sa
+ibm_db
+sqlalchemy==1.3.24
