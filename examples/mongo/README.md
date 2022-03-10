@@ -98,19 +98,13 @@ In that case the data would be replicated to Mongo, appearing as below. Note tha
 
 The example below illustrates how one can build a connection to Mongo. First, we build a MongoConnection, and the following are the inputs:
 
-1. The first field is the *username* in our example below this is **admin**
-2. 
-2. The second field is the *password* in our example below this is **jasonrocks**
-3. 
-3. The third field is the *mongodb connection url* in our example below this is **172.17.0.1:27017/admin**. This means that the user is connecting to the Mongo instance on:
-
-    a. The host with IP address *mongodb*
-
-    b. Port 27017
-
-    c. The database in Mongo used for validating authentication. The default is admin, as above, but in your setup this could be anything.
-
-4. The [optional] fourth argument is the authentication source. By default we authenticate using the standard Mongo authentication source (admin). For more details on authentication sources see [this link](https://docs.mongodb.com/manual/core/authentication-mechanisms/).
+* The first field is the *username* in our example below this is **admin**
+* The second field is the *password* in our example below this is **jasonrocks**
+* The third field is the *mongodb connection url* in our example below this is **172.17.0.1:27017/admin**. This means that the user is connecting to the Mongo instance on:
+  *  The host with IP address *mongodb*
+  *  Port 27017
+  *  The database in Mongo used for validating authentication. The default is admin, as above, but in your setup this could be anything.
+* The [optional] fourth argument is the authentication source. By default we authenticate using the standard Mongo authentication source (admin). For more details on authentication sources see [this link](https://docs.mongodb.com/manual/core/authentication-mechanisms/).
 
 
 ```
